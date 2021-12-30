@@ -1,0 +1,18 @@
+type Power {
+  _id: ID!
+  name: String!
+  description: String!
+}
+
+type Query {
+  powers: [Power]!
+}
+
+input AddPowerParams {
+  name: String!
+  description: String!
+}
+
+type Mutation {
+  addPower(params: AddPowerParams): Power!
+}

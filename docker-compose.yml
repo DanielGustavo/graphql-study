@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  server:
+    container_name: gqlStudy_server
+    build: .
+    volumes:
+      - ./:/graphql-study
+      - node_modules:/graphql-study/node_modules
+    ports:
+      - 4001:4001
+    depends_on:
+      - database
+
+  database:
+    image: mongo:4.4.11-rc1-focal
+    container_name: gqlStudy_mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin
+    volumes:
+      - ./db:/data/db
+    ports:
+      - 27017:27017
+
+volumes:
+  node_modules:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ./node_modules

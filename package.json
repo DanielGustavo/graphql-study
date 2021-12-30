@@ -1,0 +1,27 @@
+{
+  "name": "graphql-study",
+  "version": "0.0.0",
+  "description": "repo to study graphql",
+  "main": "src/server.js",
+  "author": "Daniel Gustavo",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "@graphql-tools/load-files": "^6.5.3",
+    "@graphql-tools/merge": "^8.2.1",
+    "apollo-server": "^3.5.0",
+    "axios": "^0.24.0",
+    "graphql": "^16.2.0",
+    "mongoose": "^6.1.4"
+  },
+  "scripts": {
+    "dev": "NODE_ENV=development nodemon --legacy-watch --exec babel-node src/index.js --ignore dataset.json -e js,gql"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.5",
+    "@babel/node": "^7.16.5",
+    "@babel/preset-env": "^7.16.5",
+    "nodemon": "^2.0.15"
+  }
+}

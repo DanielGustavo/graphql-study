@@ -1,0 +1,19 @@
+type Hero {
+  _id: ID!
+  name: String!
+  powers: [Power]!
+}
+
+type Query {
+  heros: [Hero]!
+  hero(id: ID!): Hero!
+}
+
+input AddHeroParams {
+  name: String!
+  powerId: ID
+}
+
+type Mutation {
+  addHero(params: AddHeroParams): Hero!
+}
